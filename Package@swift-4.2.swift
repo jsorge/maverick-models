@@ -1,4 +1,5 @@
-// swift-tools-version:4.1
+// swift-tools-version:4.2
+
 import PackageDescription
 
 let package = Package(
@@ -8,11 +9,13 @@ let package = Package(
             name: "MaverickModels",
             targets: ["MaverickModels"]),
     ],
-    dependencies: [],
+    dependencies: [
+		.package(url: "https://github.com/kylef/PathKit.git", from: "0.9.1"),
+    ],
     targets: [
         .target(
             name: "MaverickModels",
-            dependencies: []),
+            dependencies: ["PathKit"]),
         .testTarget(
             name: "MaverickModelsTests",
             dependencies: ["MaverickModels"]),

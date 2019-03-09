@@ -7,7 +7,10 @@
 
 import Foundation
 
+public typealias Tag = String
+
 /// Metadata about a post
+@available(iOS 10.0, OSX 10.12, *)
 public struct FrontMatter: Codable {
     /// The date format used in all content
     public static let dateFormatter: ISO8601DateFormatter = {
@@ -48,7 +51,7 @@ public struct FrontMatter: Codable {
     /// The name of the file
     public let filename: String?
     /// The tags that a post belongs to
-    public let tags: [String]
+    public let tags: [Tag]
 
     private enum CodingKeys: String, CodingKey {
         case isMicroblog = "microblog"
@@ -92,12 +95,12 @@ public struct FrontMatter: Codable {
         }
         self.date = date
 
-        let tags = try container.decodeIfPresent([String].self, forKey: .tags)
+        let tags = try container.decodeIfPresent([Tag].self, forKey: .tags)
         self.tags = tags ?? []
     }
 
     public init(isMicroblog: Bool, title: String?, layout: String?, guid: String?, date: Date,
-                isStaticPage: Bool, shortDescription: String, filename: String?, tags: [String] = [])
+                isStaticPage: Bool, shortDescription: String, filename: String?, tags: [Tag] = [])
     {
         self.isMicroblog = isMicroblog
         self.title = title

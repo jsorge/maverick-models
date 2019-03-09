@@ -12,6 +12,7 @@ public enum CodingError: Error {
 }
 
 /// A page is what gets rendered by the browser
+@available(iOS 10.0, OSX 10.12, *)
 public struct Page: Codable {
     public let style: Style
     public let site: SiteConfig
@@ -24,6 +25,7 @@ public struct Page: Codable {
     }
 }
 
+@available(iOS 10.0, OSX 10.12, *)
 extension Page {
     /// Defines the different styles that a page can present
     public enum Style: Codable {
