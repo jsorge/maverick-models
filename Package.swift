@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "MaverickModels",
+    platforms: [.macOS(.v10_14)],
     products: [
         .library(name: "MaverickModels", targets: ["MaverickModels"]),
     ],

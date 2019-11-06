@@ -113,3 +113,11 @@ public struct FrontMatter: Codable {
         self.tags = tags
     }
 }
+
+extension FrontMatter {
+    public static func emptyTemplate(date: Date, filename: String, title: String) -> FrontMatter {
+        return FrontMatter(isMicroblog: false, title: title,
+                           layout: "post", guid: nil, date: date, isStaticPage: false,
+                           shortDescription: "<Short Description Goes Here>", filename: filename)
+    }
+}
