@@ -8,8 +8,10 @@ let package = Package(
     products: [
         .library(name: "MaverickModels", targets: ["MaverickModels"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/dduan/Pathos.git", from: "0.2.1")
+    ],
     targets: [
-        .target(name: "MaverickModels", dependencies: []),
+        .target(name: "MaverickModels", dependencies: ["Pathos",]),
     ]
 )
