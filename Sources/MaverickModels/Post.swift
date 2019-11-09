@@ -10,7 +10,6 @@ import Foundation
 public typealias Markdown = String
 
 /// A basic container for an unformatted post.
-@available(iOS 10.0, OSX 10.12, *)
 public struct BasePost {
     public let frontMatter: FrontMatter
     public let content: Markdown
@@ -22,7 +21,6 @@ public struct BasePost {
 }
 
 /// A formatted post, ready to be sent wherever it needs to go (the website or as a generated feed item)
-@available(iOS 10.0, OSX 10.12, *)
 public struct Post: Codable {
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()

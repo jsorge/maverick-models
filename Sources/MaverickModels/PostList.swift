@@ -7,7 +7,6 @@
 
 import Foundation
 
-@available(iOS 10.0, OSX 10.12, *)
 public struct PostList: Codable {
     public let posts: [Post]
     public let pagination: Pagination

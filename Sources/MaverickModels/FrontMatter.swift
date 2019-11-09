@@ -10,7 +10,6 @@ import Foundation
 public typealias Tag = String
 
 /// Metadata about a post
-@available(iOS 10.0, OSX 10.12, *)
 public struct FrontMatter: Codable {
     /// The date format used in all content
     public static let dateFormatter: ISO8601DateFormatter = {
